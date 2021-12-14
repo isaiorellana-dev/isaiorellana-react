@@ -1,0 +1,61 @@
+@import "vars";
+
+.section-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.intro-isai {
+  position: relative;
+  padding-right: 10px;
+  display: flex;
+  max-width: 450px;
+  height: 380px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.intro-isai img {
+  position: absolute;
+  width: 308px;
+  top: -7px;
+}
+.intro-isai .isai-titulo {
+  position: relative;
+  margin-top: 20px;
+  text-align: right;
+}
+.intro-isai .isai-titulo h2 {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  text-align: right;
+}
+.intro-isai .isai-titulo p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: right;
+}
+.description {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  text-align: right;
+  width: 50%;
+  align-self: flex-end;
+}
+@media (max-width: 413px) {
+  .intro-isai img {
+    left: -35px;
+  }
+}
+@media (max-width: 343px) {
+  .intro-isai {
+    height: 330px;
+  }
+  .intro-isai img {
+    width: 260px;
+  }
+}

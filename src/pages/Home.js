@@ -1,10 +1,18 @@
 import React from "react";
 import useDocumentTitle from "@hooks/useDocumentTitle";
-import "@styles/layout.scss";
+import Welcome from "@components/Welcome";
+import PortfolioSlide from "@components/PortfolioSlide";
 
 const Home = () => {
   useDocumentTitle("Home");
-  return <h1>Home xd</h1>;
+  return (
+    <React.Fragment>
+      <section>
+        <Welcome />
+        <PortfolioSlide />
+      </section>
+    </React.Fragment>
+  );
 };
 
 export default Home;
