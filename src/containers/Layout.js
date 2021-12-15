@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "@components/Header";
-
+import "@styles/Layout.scss";
 const Layout = ({ children }) => {
   return (
-    <div>
+    <React.Fragment>
       <Header />
       {children}
       {/* <Footer /> */}
-    </div>
+    </React.Fragment>
   );
 };
 
