@@ -7,7 +7,14 @@ const Home = () => {
   useDocumentTitle("Home");
   return (
     <React.Fragment>
-      <section>
+      <section
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-around",
+          width: "100%",
+        }}
+      >
         <Welcome />
         <PortfolioSlide />
       </section>
