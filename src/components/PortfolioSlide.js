@@ -3,6 +3,7 @@ import dariel from "@img/dariel.jpg";
 import nelsi from "@img/nelsi.jpg";
 import paperas from "@img/paperas.jpg";
 import maquillaje from "@img/maquillaje.jpg";
+import CardTitle from "./common/CardTitle";
 import "@styles/PortfolioSlide.scss";
 
 const PortfolioSlide = () => {
@@ -22,9 +23,7 @@ const PortfolioSlide = () => {
           <img src={dariel} alt="Retrato Isai" />
         </div>
       </div>
-      <div className="portafolio-slider--title">
-        <h2>MI PORTAFOLIO</h2>
-      </div>
+      <CardTitle text="Mi Portafolio" />
       <div className="portafolio-slider--button">
         <a href="portafolio">
           <h2>ver más</h2>

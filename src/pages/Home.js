@@ -2,19 +2,13 @@ import React from "react";
 import useDocumentTitle from "@hooks/useDocumentTitle";
 import Welcome from "@components/Welcome";
 import PortfolioSlide from "@components/PortfolioSlide";
+import "@styles/Home.scss";
 
 const Home = () => {
   useDocumentTitle("Home");
   return (
     <React.Fragment>
-      <section
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-          width: "100%",
-        }}
-      >
+      <section className="home-section-1">
         <Welcome />
         <PortfolioSlide />
       </section>
