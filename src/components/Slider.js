@@ -12,19 +12,17 @@ const Slider = () => {
   const [indexImg, setIndexImg] = React.useState(0);
 
   const next = () => {
-    if (indexImg === 3) {
-      setIndexImg(0);
-    } else {
-      setIndexImg(indexImg + 1);
-    }
+    indexImg === 3 ? setIndexImg(0) : setIndexImg(indexImg + 1);
   };
   const prev = () => {
-    if (indexImg === 0) {
-      setIndexImg(3);
-    } else {
-      setIndexImg(indexImg - 1);
-    }
+    indexImg === 0 ? setIndexImg(3) : setIndexImg(indexImg - 1);
   };
+
+  setTimeout(() => {
+    next();
+    console.log("next");
+  }, 2500);
+  // automaticSlide();
 
   return (
     <div className="slider">
