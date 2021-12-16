@@ -5,9 +5,10 @@ import paperas from "@img/paperas.jpg";
 import maquillaje from "@img/maquillaje.jpg";
 import left from "@icons/left.svg";
 import right from "@icons/right.svg";
+import fire from "@img/fire.jpg";
 import "@styles/Slider.scss";
 const Slider = () => {
-  const clasesImg = ["img-1", "img-2", "img-3", "img-4"];
+  const clasesImg = ["img-1", "img-2", "img-3", "img-4", "img-5"];
 
   const [indexImg, setIndexImg] = React.useState(0);
 
@@ -18,11 +19,10 @@ const Slider = () => {
     indexImg === 0 ? setIndexImg(3) : setIndexImg(indexImg - 1);
   };
 
-  setTimeout(() => {
-    next();
-    console.log("next");
-  }, 2500);
-  // automaticSlide();
+  // setTimeout(() => {
+  //   next();
+  //   console.log("next");
+  // }, 2500);
 
   return (
     <div className="slider">
@@ -58,6 +58,7 @@ const Slider = () => {
           }
           src={dariel}
         />
+        <img className={clasesImg[4]} src={fire} />
       </div>
       <div className="arrowLeft" onClick={prev}>
         <img src={left} alt="left" />
