@@ -12,17 +12,12 @@ const Slider = () => {
 
   const [indexImg, setIndexImg] = React.useState(0);
 
-  const next = () => {
+  const prev = () => {
     indexImg === 4 ? setIndexImg(0) : setIndexImg(indexImg + 1);
   };
-  const prev = () => {
+  const next = () => {
     indexImg === 0 ? setIndexImg(4) : setIndexImg(indexImg - 1);
   };
-
-  // setTimeout(() => {
-  //   next();
-  //   console.log("next");
-  // }, 2500);
 
   return (
     <div className="slider">
