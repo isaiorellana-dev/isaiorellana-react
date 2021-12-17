@@ -8,22 +8,24 @@
     position: relative;
     width: 520px;
     height: 370px;
-    // overflow: hidden;
+    overflow: hidden;
     img {
       top: 20px;
       width: 260px;
-      transition: 1s;
-      // padding: 5px;s
+      transition: 0.4s;
+      padding: 5px;
     }
     .img-1 {
       position: absolute;
       left: -390px;
       z-index: 1;
+      filter: blur(2px);
     }
     .img-2 {
       position: absolute;
       left: -130px;
       z-index: 3;
+      filter: blur(2px);
     }
     .img-3 {
       position: absolute;
@@ -34,11 +36,13 @@
       position: absolute;
       left: 390px;
       z-index: 2;
+      filter: blur(2px);
     }
     .img-5 {
       position: absolute;
       left: 650px;
       z-index: 1;
+      filter: blur(2px);
     }
   }
   .arrowRight {
@@ -48,6 +52,9 @@
     top: 150px;
     z-index: 4;
     cursor: pointer;
+    :hover {
+      transform: scale(1.1);
+    }
     img {
       width: 100%;
     }
@@ -59,6 +66,9 @@
     top: 150px;
     z-index: 4;
     cursor: pointer;
+    :hover {
+      transform: scale(1.1);
+    }
     img {
       width: 100%;
     }
@@ -67,7 +77,10 @@
 @media (max-width: 510px) {
   .slider {
     .arrowLeft {
-      left: 70px;
+      left: 110px;
+    }
+    .arrowRight {
+      right: 110px;
     }
   }
 }
