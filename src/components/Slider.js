@@ -11,6 +11,7 @@ const Slider = () => {
   const clasesImg = ["img-1", "img-2", "img-3", "img-4", "img-5"];
 
   const [indexImg, setIndexImg] = React.useState(0);
+  const [autoplay, setAutoplay] = React.useState(true);
 
   const prev = () => {
     indexImg === 4 ? setIndexImg(0) : setIndexImg(indexImg + 1);
@@ -19,6 +20,11 @@ const Slider = () => {
     indexImg === 0 ? setIndexImg(4) : setIndexImg(indexImg - 1);
   };
 
+  const timer = autoplay ? setTimeout(next, 3000) : null;
+
+  window.addEventListener("scroll", () => {
+    setAutoplay(true);
+  });
   return (
     <div className="slider">
       <div className="img-container">
@@ -58,10 +64,24 @@ const Slider = () => {
           src={maquillaje}
         />
       </div>
-      <div className="arrowLeft" onClick={prev}>
+      <div
+        className="arrowLeft"
+        onClick={() => {
+          clearTimeout(timer);
+          setAutoplay(false);
+          prev();
+        }}
+      >
         <img src={left} alt="left" />
       </div>
-      <div className="arrowRight" onClick={next}>
+      <div
+        className="arrowRight"
+        onClick={() => {
+          clearTimeout(timer);
+          setAutoplay(false);
+          next();
+        }}
+      >
         <img src={right} alt="right" />
       </div>
     </div>
