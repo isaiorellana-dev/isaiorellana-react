@@ -11,7 +11,6 @@ const Home = () => {
       <section className="home-section-1">
         <Welcome />
         <PortfolioSlide />
-        <Welcome />
       </section>
     </React.Fragment>
   );
