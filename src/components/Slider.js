@@ -16,15 +16,34 @@ const Slider = () => {
   const prev = () => {
     indexImg === 4 ? setIndexImg(0) : setIndexImg(indexImg + 1);
   };
-  const next = () => {
+  function next() {
     indexImg === 0 ? setIndexImg(4) : setIndexImg(indexImg - 1);
+    return indexImg;
+  }
+
+  let timer;
+  const updateTimer = () => {
+    timer =
+      !timer &&
+      setInterval(() => {
+        setIndexImg((prevIndexImg) => prevIndexImg - 1);
+        if (indexImg === 0) setIndexImg(4);
+      }, 3000);
+    if (autoplay === false) clearInterval(timer);
   };
 
-  const timer = autoplay ? setTimeout(next, 3000) : null;
+  React.useEffect(() => {
+    updateTimer();
 
-  window.addEventListener("scroll", () => {
-    setAutoplay(true);
-  });
+    return () => clearInterval(timer);
+  }, [autoplay, indexImg]);
+
+  if (!autoplay) {
+    window.onscroll = () => {
+      setAutoplay(true);
+    };
+  }
+
   return (
     <div className="slider">
       <div className="img-container">
@@ -67,7 +86,6 @@ const Slider = () => {
       <div
         className="arrowLeft"
         onClick={() => {
-          clearTimeout(timer);
           setAutoplay(false);
           prev();
         }}
@@ -77,7 +95,6 @@ const Slider = () => {
       <div
         className="arrowRight"
         onClick={() => {
-          clearTimeout(timer);
           setAutoplay(false);
           next();
         }}
