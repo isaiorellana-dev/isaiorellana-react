@@ -83,28 +83,21 @@ h2 {
 .home-cards--img-1 {
   grid-column: 1 / 5;
   grid-row: 1 / 2;
-  animation: slide-cards 10s linear infinite;
+  animation: slide-cards 5s linear infinite;
 }
 
 .home-cards--img-2 {
   grid-column: 1 / 5;
   grid-row: 1 / 2;
-  animation: slide-cards 10s linear infinite;
-  animation-delay: 3.333333s;
+  animation: slide-cards 5s linear infinite;
+  animation-delay: 1.66666s;
 }
 
 .home-cards--img-3 {
   grid-column: 1 / 5;
   grid-row: 1 / 2;
-  animation: slide-cards 10s linear infinite;
-  animation-delay: 6.6666666s;
-}
-
-.home-cards--img-4 {
-  grid-column: 1 / 5;
-  grid-row: 1 / 2;
-  animation: slide-cards 10s linear infinite;
-  animation-delay: 9.9999s;
+  animation: slide-cards 5s linear infinite;
+  animation-delay: 3.3333333s;
 }
 
 .section-2 img {

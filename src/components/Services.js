@@ -10,7 +10,7 @@ const Services = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 6500);
+    }, 3300);
   }, []);
 
   return (
