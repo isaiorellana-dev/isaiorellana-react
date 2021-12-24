@@ -1,0 +1,155 @@
+@import "vars";
+
+h2 {
+  display: block;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 0px 5px 0px 5px;
+}
+
+.section-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 10px;
+
+  h2 {
+    display: block;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 0px 5px 0px 5px;
+  }
+
+  article {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    max-width: 350px;
+    background: var(--layout);
+    border: 4px var(--blue) solid;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .home-card--title {
+    position: absolute;
+    top: -16px;
+    background-color: var(--blue);
+    border-radius: 8px;
+  }
+}
+
+.home-card .home-card--img-container {
+  display: grid;
+  width: 100%;
+  max-width: 350px;
+  grid-template-columns: 190px 190px 190px 190px;
+  grid-template-rows: 190px;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px 4px 0px 0px;
+  .loading {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 190px;
+    background-color: rgb(97, 97, 97);
+    :nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      width: 190px;
+      height: 100%;
+      background-color: rgb(121, 121, 121);
+      animation: loadingg 1s infinite;
+    }
+  }
+}
+
+@keyframes loadingg {
+  from {
+    margin-left: 0px;
+    background-color: gray;
+  }
+  to {
+    margin-left: 570px;
+    background-color: rgb(97, 97, 97);
+  }
+}
+
+.home-cards--img-1 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  animation: slide-cards 10s linear infinite;
+}
+
+.home-cards--img-2 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  animation: slide-cards 10s linear infinite;
+  animation-delay: 3.333333s;
+}
+
+.home-cards--img-3 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  animation: slide-cards 10s linear infinite;
+  animation-delay: 6.6666666s;
+}
+
+.home-cards--img-4 {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  animation: slide-cards 10s linear infinite;
+  animation-delay: 9.9999s;
+}
+
+.section-2 img {
+  width: 190px;
+  height: auto;
+}
+
+@keyframes slide-cards {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 570px;
+  }
+}
+
+.home-card p {
+  font-size: 1.4rem;
+  padding: 10px;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.button-vermas {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  height: 26px;
+  background-color: var(--red);
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 2.6rem;
+  margin: 5px 0px 10px 0px;
+
+  a {
+    text-decoration: none;
+    color: var(--black);
+
+    &:hover {
+      color: var(--blue);
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
+}

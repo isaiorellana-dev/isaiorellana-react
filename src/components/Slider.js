@@ -23,12 +23,9 @@ const Slider = () => {
 
   let timer;
   const updateTimer = () => {
-    timer =
-      !timer &&
-      setInterval(() => {
-        setIndexImg((prevIndexImg) => prevIndexImg - 1);
-        if (indexImg === 0) setIndexImg(4);
-      }, 3000);
+    timer = setInterval(() => {
+      next();
+    }, 3000);
     if (autoplay === false) clearInterval(timer);
   };
 
