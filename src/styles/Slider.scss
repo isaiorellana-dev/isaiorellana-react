@@ -16,6 +16,24 @@
       padding: 5px;
       border-radius: 10px;
     }
+    div {
+      top: 20px;
+      border-radius: 4px;
+      width: 260px;
+      width: 250px;
+      height: 312px;
+      background-color: rgb(199, 199, 199);
+      :nth-child(1) {
+        width: 100px;
+        height: 312px;
+        background: linear-gradient(
+          90deg,
+          rgb(199, 199, 199) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        animation: loadingSkeleton 1s infinite;
+      }
+    }
     .img-1 {
       position: absolute;
       left: -390px;
@@ -76,6 +94,17 @@
     }
   }
 }
+@keyframes loadingSkeleton {
+  from {
+    margin-left: 0px;
+    background-color: gray;
+  }
+  to {
+    margin-left: 150px;
+    background-color: rgb(97, 97, 97);
+  }
+}
+
 @media (max-width: 510px) {
   .slider {
     .arrowLeft {
