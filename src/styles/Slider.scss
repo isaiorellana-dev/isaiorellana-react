@@ -34,6 +34,9 @@
         animation: loadingSkeleton 1s infinite;
       }
     }
+    .hide {
+      display: none;
+    }
     .img-1 {
       position: absolute;
       left: -390px;

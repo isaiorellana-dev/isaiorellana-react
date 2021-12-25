@@ -32,45 +32,43 @@ const Slider = () => {
           </div>
         </div>
       )}
-      {!loading && (
-        <div className="img-container">
-          <img className={clasesImg[indexImg]} src={nelsi} />
-          <img
-            className={clasesImg[indexImg === 4 ? 0 : indexImg + 1]}
-            src={paperas}
-          />
-          <img
-            className={
-              clasesImg[
-                indexImg === 4
-                  ? 1
-                  : indexImg + 2 && indexImg === 3
-                  ? 0
-                  : indexImg + 2
-              ]
-            }
-            src={fire}
-          />
-          <img
-            className={
-              clasesImg[
-                indexImg === 2
-                  ? 0
-                  : indexImg + 3 && indexImg === 3
-                  ? 1
-                  : indexImg + 3 && indexImg === 4
-                  ? 2
-                  : indexImg + 3
-              ]
-            }
-            src={dariel}
-          />
-          <img
-            className={clasesImg[indexImg === 0 ? 4 : indexImg - 1]}
-            src={maquillaje}
-          />
-        </div>
-      )}
+      <div className={loading ? "hide" : "img-container"}>
+        <img className={clasesImg[indexImg]} src={nelsi} />
+        <img
+          className={clasesImg[indexImg === 4 ? 0 : indexImg + 1]}
+          src={paperas}
+        />
+        <img
+          className={
+            clasesImg[
+              indexImg === 4
+                ? 1
+                : indexImg + 2 && indexImg === 3
+                ? 0
+                : indexImg + 2
+            ]
+          }
+          src={fire}
+        />
+        <img
+          className={
+            clasesImg[
+              indexImg === 2
+                ? 0
+                : indexImg + 3 && indexImg === 3
+                ? 1
+                : indexImg + 3 && indexImg === 4
+                ? 2
+                : indexImg + 3
+            ]
+          }
+          src={dariel}
+        />
+        <img
+          className={clasesImg[indexImg === 0 ? 4 : indexImg - 1]}
+          src={maquillaje}
+        />
+      </div>
       <div
         className="arrowLeft"
         onClick={() => {
