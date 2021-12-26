@@ -6,6 +6,11 @@ function useSlider() {
   const [indexImg, setIndexImg] = React.useState(0);
   const [autoplay, setAutoplay] = React.useState(true);
 
+  const [loading, setLoading] = React.useState(true);
+  window.onload = () => {
+    setLoading(false);
+  };
+
   const prev = () => {
     indexImg === 4 ? setIndexImg(0) : setIndexImg(indexImg + 1);
   };
@@ -34,7 +39,7 @@ function useSlider() {
     };
   }
 
-  return { clasesImg, indexImg, setAutoplay, prev, next };
+  return { loading, clasesImg, indexImg, setAutoplay, prev, next };
 }
 
 export default useSlider;

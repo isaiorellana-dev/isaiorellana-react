@@ -6,10 +6,17 @@ import maquillaje from "@img/maquillaje.jpg";
 import CardTitle from "./common/CardTitle";
 import "@styles/PortfolioSlide.scss";
 import Slider from "@components/Slider.js";
-const PortfolioSlide = () => {
+const PortfolioSlider = (props) => {
   return (
     <div className="portafolio-slider">
-      <Slider />
+      <Slider
+        loading={props.loading}
+        clasesImg={props.clasesImg}
+        indexImg={props.indexImg}
+        setAutoplay={props.setAutoplay}
+        prev={props.prev}
+        next={props.next}
+      />
 
       <CardTitle text="Mi Portafolio" />
       <div className="portafolio-slider--button">
@@ -21,4 +28,4 @@ const PortfolioSlide = () => {
   );
 };
 
-export default PortfolioSlide;
+export default PortfolioSlider;

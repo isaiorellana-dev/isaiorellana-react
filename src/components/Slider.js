@@ -7,19 +7,11 @@ import left from "@icons/left.svg";
 import right from "@icons/right.svg";
 import fire from "@img/fire.jpg";
 import "@styles/Slider.scss";
-import useSlider from "@hooks/useSlider";
 
-const Slider = () => {
-  const { clasesImg, indexImg, setAutoplay, prev, next } = useSlider();
-
-  const [loading, setLoading] = React.useState(true);
-  window.onload = () => {
-    setLoading(false);
-  };
-  console.log(loading);
+const Slider = (props) => {
   return (
     <div className="slider">
-      {loading && (
+      {props.loading && (
         <div className="img-container">
           <div className="img-2">
             <div></div>
@@ -32,48 +24,52 @@ const Slider = () => {
           </div>
         </div>
       )}
-      <div className={loading ? "hide" : "img-container"}>
-        <img className={clasesImg[indexImg]} src={nelsi} />
+      <div className={props.loading ? "hide" : "img-container"}>
+        <img className={props.clasesImg[props.indexImg]} src={nelsi} />
         <img
-          className={clasesImg[indexImg === 4 ? 0 : indexImg + 1]}
+          className={
+            props.clasesImg[props.indexImg === 4 ? 0 : props.indexImg + 1]
+          }
           src={paperas}
         />
         <img
           className={
-            clasesImg[
-              indexImg === 4
+            props.clasesImg[
+              props.indexImg === 4
                 ? 1
-                : indexImg + 2 && indexImg === 3
+                : props.indexImg + 2 && props.indexImg === 3
                 ? 0
-                : indexImg + 2
+                : props.indexImg + 2
             ]
           }
           src={fire}
         />
         <img
           className={
-            clasesImg[
-              indexImg === 2
+            props.clasesImg[
+              props.indexImg === 2
                 ? 0
-                : indexImg + 3 && indexImg === 3
+                : props.indexImg + 3 && props.indexImg === 3
                 ? 1
-                : indexImg + 3 && indexImg === 4
+                : props.indexImg + 3 && props.indexImg === 4
                 ? 2
-                : indexImg + 3
+                : props.indexImg + 3
             ]
           }
           src={dariel}
         />
         <img
-          className={clasesImg[indexImg === 0 ? 4 : indexImg - 1]}
+          className={
+            props.clasesImg[props.indexImg === 0 ? 4 : props.indexImg - 1]
+          }
           src={maquillaje}
         />
       </div>
       <div
         className="arrowLeft"
         onClick={() => {
-          setAutoplay(false);
-          prev();
+          props.setAutoplay(false);
+          props.prev();
         }}
       >
         <img src={left} alt="left" />
@@ -81,8 +77,8 @@ const Slider = () => {
       <div
         className="arrowRight"
         onClick={() => {
-          setAutoplay(false);
-          next();
+          props.setAutoplay(false);
+          props.next();
         }}
       >
         <img src={right} alt="right" />

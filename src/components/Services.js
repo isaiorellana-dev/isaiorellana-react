@@ -4,15 +4,24 @@ import avocados from "@img/avocados.jpg";
 import chuleta from "@img/chuleta.jpg";
 import yeti from "@img/yeti.jpg";
 
-const Services = () => {
-  const [loading, setLoading] = React.useState(true);
+const Services = (props) => {
+  const [imgLoading, setImgLoading] = React.useState(true);
 
   React.useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
-    }, 3300);
+      setImgLoading(false);
+    }, 3500);
   }, []);
-
+  const loadingCheck = () => {
+    if (imgLoading) {
+      return true;
+    } else if (props.loading) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  console.log(props.loading);
   return (
     <section className="section-2">
       <article className="home-card">
@@ -32,7 +41,7 @@ const Services = () => {
           <div className="home-cards--img home-cards--img-3">
             <img src={yeti} alt="Fotografia Comercial Yeti IsaiOrellana" />
           </div>
-          {loading && (
+          {loadingCheck() && (
             <div className="loading">
               <div></div>
             </div>

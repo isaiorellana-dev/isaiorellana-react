@@ -1,6 +1,6 @@
 import React from "react";
 import useDocumentTitle from "@hooks/useDocumentTitle";
-import PortfolioSlide from "@components/PortfolioSlide";
+import PortfolioSlider from "@components/PortfolioSlider";
 
 const NotFound = () => {
   useDocumentTitle("Error 404");
