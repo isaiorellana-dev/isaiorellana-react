@@ -1,8 +1,7 @@
 import React from "react";
 import "@styles/Services.scss";
-import avocados from "@img/avocados.jpg";
-import chuleta from "@img/chuleta.jpg";
-import yeti from "@img/yeti.jpg";
+import VerMas from "./common/VerMas";
+import CardTitle from "./common/CardTitle";
 
 const Services = (props) => {
   const [imgLoading, setImgLoading] = React.useState(true);
@@ -21,51 +20,38 @@ const Services = (props) => {
       return false;
     }
   };
-  console.log(props.loading);
   return (
-    <section className="section-2">
-      <article className="home-card">
-        <div className="home-card--title">
-          <h2>FOTOGRAFÍA COMERCIAL</h2>
+    <article className="home-card">
+      <CardTitle text={props.title} className="home-card--title" />
+      <div className="home-card--img-container">
+        <div className="home-cards--img home-cards--img-1">
+          <img src={props.firstImg} alt="Fotografia comercial IsaiOrellana" />
         </div>
-        <div className="home-card--img-container">
-          <div className="home-cards--img home-cards--img-1">
-            <img src={avocados} alt="Fotografia comercial IsaiOrellana" />
-          </div>
-          <div className="home-cards--img home-cards--img-2">
-            <img
-              src={chuleta}
-              alt="Fotografia Gastronomica Chuleta Isai Orellana"
-            />
-          </div>
-          <div className="home-cards--img home-cards--img-3">
-            <img src={yeti} alt="Fotografia Comercial Yeti IsaiOrellana" />
-          </div>
-          {loadingCheck() && (
-            <div className="loading">
-              <div></div>
-            </div>
-          )}
+        <div className="home-cards--img home-cards--img-2">
+          <img
+            src={props.secondImg}
+            alt="Fotografia Gastronomica Chuleta Isai Orellana"
+          />
         </div>
-        <p>
-          <span>
-            Que tus clientes conozcan la mejor cara de tu negocio con
-            fotografías profesionales.
-          </span>
-          <br />
-          Seguramente sabes de la enorme importancia de la{" "}
-          <span>publicidad</span> para tu negocio, la gente necesita ver tus
-          productos o los servicios que tienes para ofrecerles y si tu objetivo
-          es dar un servicio o producto de <span>calidad</span> lo mejor es
-          promocionar tu negocio con imágenes de <span>calidad</span>.
-        </p>
-        <div className="button-vermas">
-          <a href="servicios">
-            <h2>ver más</h2>
-          </a>
+        <div className="home-cards--img home-cards--img-3">
+          <img
+            src={props.thirdImg}
+            alt="Fotografia Comercial Yeti IsaiOrellana"
+          />
         </div>
-      </article>
-    </section>
+        {loadingCheck() && (
+          <div className="loading">
+            <div></div>
+          </div>
+        )}
+      </div>
+      <p>
+        <span>{props.subtitle}</span>
+        <br />
+        {props.paragraph}
+      </p>
+      <VerMas className="button-inside" href="servicios" />
+    </article>
   );
 };
 

@@ -1,23 +1,9 @@
-@import "vars";
+@import "mixins";
 
-h2 {
-  display: block;
-  font-size: 2.4rem;
-  text-align: center;
-  padding: 0px 5px 0px 5px;
-}
-
-.section-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 10px;
-
-  h2 {
-    display: block;
-    font-size: 2.4rem;
-    text-align: center;
-    padding: 0px 5px 0px 5px;
+.home-section-2 {
+  img {
+    width: 190px;
+    height: auto;
   }
 
   article {
@@ -33,13 +19,6 @@ h2 {
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
-  }
-
-  .home-card--title {
-    position: absolute;
-    top: -16px;
-    background-color: var(--blue);
-    border-radius: 8px;
   }
 }
 
@@ -104,11 +83,6 @@ h2 {
   animation-delay: 3.3333333s;
 }
 
-.section-2 img {
-  width: 190px;
-  height: auto;
-}
-
 @keyframes slide-cards {
   from {
     margin-left: 0px;
@@ -120,33 +94,43 @@ h2 {
 }
 
 .home-card p {
-  font-size: 1.4rem;
+  font-size: var(--p-mobile);
   padding: 10px;
 
   span {
     font-weight: 700;
   }
 }
+@media (min-width: 1200px) {
+  .home-section-2 {
+    article {
+      max-width: 400px;
+    }
+    img {
+      width: 217px;
+    }
+    .home-card p {
+      font-size: var(--p-desktop);
+    }
+    .home-card--img-container {
+      max-width: 400px;
+      grid-template-columns: 217px 217px 217px 217px;
+      grid-template-rows: 217px;
+      .loading {
+        height: 217px;
+        :nth-child(1) {
+          width: 217px;
+        }
+      }
+    }
+  }
+  @keyframes slide-cards {
+    from {
+      margin-left: 0px;
+    }
 
-.button-vermas {
-  display: flex;
-  align-content: flex-start;
-  justify-content: center;
-  height: 26px;
-  background-color: var(--red);
-  border-radius: 8px;
-  overflow: hidden;
-  line-height: 2.6rem;
-  margin: 5px 0px 10px 0px;
-
-  a {
-    text-decoration: none;
-    color: var(--black);
-
-    &:hover {
-      color: var(--blue);
-      transform: scale(1.05);
-      transition: 0.5s;
+    to {
+      margin-left: 651px;
     }
   }
 }

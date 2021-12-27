@@ -1,0 +1,40 @@
+@import "mixins";
+
+.button-outside {
+  @include VerMasBtn;
+  position: absolute;
+  bottom: 20px;
+  z-index: 5;
+}
+h2 {
+  font-size: var(--title-mobile);
+  line-height: var(--title-mobile);
+  text-align: center;
+}
+
+.button-inside {
+  @include VerMasBtn;
+  line-height: 2.6rem;
+  margin: 5px 0px 10px 0px;
+
+  h2 {
+    font-size: var(--title-mobile);
+    line-height: var(--title-mobile);
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button-outside {
+    bottom: 31px;
+    left: 235px;
+    h2 {
+      font-size: var(--title-desktop);
+      line-height: var(--title-desktop);
+    }
+  }
+  .button-inside h2 {
+    font-size: var(--title-desktop);
+    line-height: var(--title-desktop);
+  }
+}

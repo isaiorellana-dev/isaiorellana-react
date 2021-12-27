@@ -10,7 +10,7 @@ const Header = () => {
     setToggleMenu(!toggleMenu);
   };
   const isMobile = () => {
-    if (window.innerWidth < 920) {
+    if (windowSize < 920) {
       return true;
     } else {
       return false;

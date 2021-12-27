@@ -3,7 +3,7 @@ import "@styles/CardTitle.scss";
 
 const CardTitle = (props) => {
   return (
-    <div className="card-title">
+    <div className={props.className}>
       <h2>{props.text}</h2>
     </div>
   );

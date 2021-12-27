@@ -1,8 +1,28 @@
-@import "vars";
-
 .home-section-1 {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
+}
+.home-section-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.portafolio-slider {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: 370px;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+@media (min-width: 1200px) {
+  .portafolio-slider {
+    height: 460px;
+  }
 }
